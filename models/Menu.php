@@ -1,6 +1,6 @@
 <?php
 
-class Menus{
+class Menu{
 //je définis les propriété de mon objet
  private $id;
  private $id_carte;

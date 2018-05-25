@@ -1,5 +1,5 @@
 <?php
-class Type_de_plats{
+class Type_de_plat{
 
 private $id;
 private $nom;
@@ -33,7 +33,7 @@ public function __construct($id=null,$nom=null)
         //je me connecte a la base de donné
         $dbh = new PDO('mysql:host=localhost;dbname=RESTO_DB_BWB', 'root', "");
         //j'envoie une requete pour récupérer l'id des type de plats
-        $request = "SELECT * FROM type_de_plats WHERE id=".$id;
+        $request = "SELECT * FROM TYPE_DE_PLAT WHERE id=".$id;
 
         //j'envoi la requete
         $statement = $dbh->query($request);
@@ -54,7 +54,7 @@ public function __construct($id=null,$nom=null)
         $pdo = new PDO("mysql:host=localhost;dbname=RESTO_DB_BWB", "root", "");
 
         //la methode prepare retourne un objet statement et permet de preparer la requete
-        $prepareStatement = $pdo->prepare("INSERT INTO type_de_plats (nom) VALUES (?)");
+        $prepareStatement = $pdo->prepare("INSERT INTO TYPE_DE_PLAT (nom) VALUES (?)");
 
         $status = $prepareStatement->execute(
             array(
