@@ -6,6 +6,8 @@
  * Time: 11:41
  */
 //une interface,c'est que des signatures de méthode
+//defini un contrat d'uttilisation (une trame)
+//la cllase abstraite permet de deporter l
 interface Crud_interface{
 
     /*
