@@ -9,45 +9,45 @@ public function __construct($id=null,$nom=null)
 
     $this->id = $id;
     $this->nom = $nom;
-    if($id !== null){
-
-
-        if($nom===null){
-
-            $this->get($id);
-        }
-    }
+//    if($id !== null){
+//
+//
+//        if($nom===null){
+//
+//            $this->get($id);
+//        }
+//    }
 }
 
-    private function get($id){
-
-        /**
-         *
-         * Se connecter a la base de donné
-         * ecrire la requete d'insertion des données
-         * executer la requete
-         * peupler les propriété de l'objet courant avec les valeurs reçuent
-         *
-         */
-
-        //je me connecte a la base de donné
-        $dbh = new PDO('mysql:host=localhost;dbname=RESTO_DB_BWB', 'root', "");
-        //j'envoie une requete pour récupérer l'id des type de plats
-        $request = "SELECT * FROM TYPE_DE_PLAT WHERE id=".$id;
-
-        //j'envoi la requete
-        $statement = $dbh->query($request);
-        //je recupere un plat
-        $type_de_plat = $statement->fetch(PDO::FETCH_ASSOC);
-        //je definis son contenus
-        $this->id = $type_de_plat['id'];
-        $this->nom = $type_de_plat['nom'];
-
-
-
-
-    }
-    //fonction qui permet de crée un type de plat
+//    private function get($id){
+//
+//        /**
+//         *
+//         * Se connecter a la base de donné
+//         * ecrire la requete d'insertion des données
+//         * executer la requete
+//         * peupler les propriété de l'objet courant avec les valeurs reçuent
+//         *
+//         */
+//
+//        //je me connecte a la base de donné
+//        $dbh = new PDO('mysql:host=localhost;dbname=RESTO_DB_BWB', 'root', "");
+//        //j'envoie une requete pour récupérer l'id des type de plats
+//        $request = "SELECT * FROM TYPE_DE_PLAT WHERE id=".$id;
+//
+//        //j'envoi la requete
+//        $statement = $dbh->query($request);
+//        //je recupere un plat
+//        $type_de_plat = $statement->fetch(PDO::FETCH_ASSOC);
+//        //je definis son contenus
+//        $this->id = $type_de_plat['id'];
+//        $this->nom = $type_de_plat['nom'];
+//
+//
+//
+//
+//    }
+ /*   //fonction qui permet de crée un type de plat
     public function create(){
 
         //on se connecte a la base de donné
@@ -65,8 +65,8 @@ public function __construct($id=null,$nom=null)
         return $status;
 
     }
-
-    //methode qui retourne un tableau associatifs
+*/
+   // methode qui retourne un tableau associatifs
     public function to_array(){
         $array = array(
             "id"=> $this->id,
@@ -82,5 +82,25 @@ public function __construct($id=null,$nom=null)
 
         return json_encode($this->to_array());
 
+    }
+
+
+    function getId(){
+
+        return $this->id;
+    }
+
+    function getNom(){
+
+        return $this->nom;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setNom($nom){
+
+        $this->nom = $nom;
     }
 }
