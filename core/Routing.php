@@ -1,4 +1,5 @@
 <?php
+namespace BWB\framework\mvc;
 class Routing {
 
 
