@@ -1,0 +1,32 @@
+{
+
+  "/": "ViewController:listeUtilisateur",
+
+  "/les_cartes":{
+
+    "GET":"DAOCarte:getAll"
+
+  },
+
+  "/api/users":{
+
+    "GET":"DAOUser:getAll",
+
+    "DELETE":"UserController:deleteAll",
+
+    "POST":"UserController:create"
+
+  },
+
+  "/api/users/:1":{
+
+    "GET":"UserController:getById",
+
+    "PUT":"UserController:update",
+
+    "DELETE":"UserController:delete"
+
+  }
+
+}
+
