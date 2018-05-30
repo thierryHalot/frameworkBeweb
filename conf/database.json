@@ -2,7 +2,7 @@
   "type":"mysql",
   "host":"localhost",
   "port":"80",
-  "dbname":"RESTO_DB_BWB",
+  "dbname":"Nom_de_votre_base_de_donne",
   "user":"root",
   "pass":""
 }

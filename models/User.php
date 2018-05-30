@@ -1,5 +1,5 @@
 <?php
-//Entité User
+// exemple une Entité User
 
 class User {
 
@@ -8,62 +8,13 @@ class User {
     private $password;
     private $email;
 
-    public function __construct($id=null,$username=null,$password=null,$email=null) {
+    public function __construct($id=null,$username=null,$password=null,$email=null)
+    {
         $this->id = $id;
         $this->email = $email;
         $this->password = $password;
         $this->username = $username;
-//        if($id !== null){
-//            if($username === null && $password === null && $email === null){
-//                $this->load($id);
-//        }
-//    }
     }
-
-//    private function load($id){
-//
-//        $db = new PDO('mysql:host=localhost;dbname=RESTO_DB_BWB', "root", "");
-//
-//        $req = "SELECT * FROM USER WHERE id=".$id;
-//
-//        $statement = $db->query($req);
-//
-//        $retour = $statement->fetchAll();
-//
-//        foreach($retour as $entry){
-//            $this->id = $entry['id'];
-//            $this->username = $entry['username'];
-//            $this->password = $entry['password'];
-//            $this->email = $entry["email"];
-//        }
-//        echo "test";
-//        return;
-//    }
-
-    /* création d'une nouvelle entrée en DB avec les propriétés de l'objet courant */
-//
-//    public function create(){
-//
-//        $pdo = new PDO('mysql:host=localhost;dbname=RESTO_DB_BWB', "root", "");
-//
-//       $preparedStatement = $pdo->prepare('insert into USERS (username,password,email) VALUES(?,?,?)');
-//
-//        $status = $preparedStatement->execute(
-//            array(
-//                $this->username,
-//                $this->password,
-//                $this->email)
-//            );
-//
-//
-//        $this->id = $pdo->lastInsertId();
-//
-//        return $status;
-//    }
-//
-//
-//
-//
 
 
     public function to_array(){
