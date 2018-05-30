@@ -1,0 +1,8 @@
+{
+    "name": "beweb/framework-mvc",
+    "description": "Framework php mvc pour etude au sein de beweb",
+    "require": {
+
+        "firebase/php-jwt" :  "5.0.0"
+    }
+}
