@@ -36,13 +36,14 @@ public function getAll() {
     $statement = $this->pdo->query($sql);
     $results = $statement->fetchAll();
     $cards = array();
+
     foreach ($results as $result){
 
         $card = new Carte();
         $card->setId(($result['id']));
-        $card->setEmail($result['id_resto']);
-        $card->setPassword($result['card_name']);
-        $card->setUsername(($result['description']));
+        $card->setId_resto($result['id_resto']);
+        $card->setCard_name($result['card_name']);
+        $card->setDescription($result['description']);
         array_push($cards,$card);
     }
     return $cards;

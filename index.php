@@ -4,16 +4,22 @@ spl_autoload_register(function ($class) {
         include './core/' . $class . '.php';
     elseif(file_exists('./models/' . $class . '.php')):
         include './models/' . $class . '.php';
+    elseif(file_exists('./controller/' . $class . '.php')):
+        include './controller/' . $class . '.php';
     endif;
 
 });
 
 
 
-$root = new Rooting();
-var_dump($root->getController());
+$root = new Routing();
+$root->getController();
 
+//var_dump(json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/conf/routing.json'), true));
 
+//$ViewController = new View_controller();
+
+//var_dump($ViewController->test());
 
 
 
